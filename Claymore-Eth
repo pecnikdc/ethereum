@@ -2,6 +2,11 @@
 exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
 
 sudo apt-get update
+sudo apt install ocl-icd-libopencl1
+sudo apt install opencl-headers
+sudo apt install clinfo
+sudo ln -s /usr/lib/x86_64-linux-gnu/libcurl-gnutls.so.4.4.0 /usr/lib/x86_64-linux-gnu/libcurl.so.4
+
 
 cd ~
 
