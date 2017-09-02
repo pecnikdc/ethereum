@@ -1,0 +1,21 @@
+#!/bin/bash -ex
+exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
+
+sudo apt-get -y update
+sudo apt-get install -y  zip
+
+cd /usr/local/
+wget https://github.com/nicehash/nheqminer/releases/download/0.5c/Ubuntu_14_04_x64_cuda_djezo_avx_nheqminer-5c.zip
+
+sudo mkdir /usr/local/nh
+sudo unzip ./Ubuntu_14_04_x64_cuda_djezo_avx_nheqminer-5c.zip -C /usr/local/nh
+
+cd /usr/local/nh
+
+echo "nheqminer -l zec.pool.minergate.com:3357 -u pecnikdc@gmail.com" >> mine.sh
+
+wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run
+
+sudo chmod +x mine.sh
+
+./mine.sh
