@@ -1,5 +1,4 @@
-#!/bin/bash -ex
-exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
+#!/bin/bash
 # Normally would start with an yum update -y && yum upgrade -y but these instances
 # are ephermeral and have no inbound ports open to 0.0.0.0/0. Although there
 # is still inherent risk waiting for instance to update is a waste of time.
@@ -31,4 +30,4 @@ cd ..
 ###########################################################################################
 # Instructions for Monero mining at mineXMR.com here: http://minexmr.com/#getting_started #
 ###########################################################################################
-sudo /cpuminer-multi/minerd -a cryptonight -o stratum+tcp://mine.xmrpool.xyz:3333 -u 48JoGrnYz1M3Vi5Bo2xzYVX4zMwsCFRe4Hch5WNhc9qjS1TMK79kQiZhUeiYHwrxakXNiUhDtaw2BU4bPZVS1egeE2dswvg.$(hostname) -p pecnikdc@gmail.com -t $nocpus
+sudo /cpuminer-multi/minerd -a cryptonight -o stratum+tcp://mine.moneropool.com:3333 -u 48JoGrnYz1M3Vi5Bo2xzYVX4zMwsCFRe4Hch5WNhc9qjS1TMK79kQiZhUeiYHwrxakXNiUhDtaw2BU4bPZVS1egeE2dswvg -p pecnikdc@gmail.com -t $nocpus
