@@ -30,5 +30,6 @@ cd ..
 ###########################################################################################
 # Instructions for Monero mining at mineXMR.com here: http://minexmr.com/#getting_started #
 ###########################################################################################
+## sudo /cpuminer-multi/minerd -a cryptonight -o stratum+tcp://mine.xmrpool.xyz:3333 -u 48JoGrnYz1M3Vi5Bo2xzYVX4zMwsCFRe4Hch5WNhc9qjS1TMK79kQiZhUeiYHwrxakXNiUhDtaw2BU4bPZVS1egeE2dswvg -p novast.$(hostname) -t $nocpus
 ## sudo /cpuminer-multi/minerd -a cryptonight -o stratum+tcp://mine.moneropool.com:3333 -u 48JoGrnYz1M3Vi5Bo2xzYVX4zMwsCFRe4Hch5WNhc9qjS1TMK79kQiZhUeiYHwrxakXNiUhDtaw2BU4bPZVS1egeE2dswvg -p pecnikdc@gmail.com -t $(cat /proc/cpuinfo | grep processor | wc -l)
 sudo /cpuminer-multi/minerd -a cryptonight -o stratum+tcp://mine.moneropool.com:3333 -u 48JoGrnYz1M3Vi5Bo2xzYVX4zMwsCFRe4Hch5WNhc9qjS1TMK79kQiZhUeiYHwrxakXNiUhDtaw2BU4bPZVS1egeE2dswvg -p pecnikdc@gmail.com -t $nocpus
